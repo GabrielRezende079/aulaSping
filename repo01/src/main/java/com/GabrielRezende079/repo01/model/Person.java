@@ -18,11 +18,11 @@ public class Person implements Serializable {
     private String Address;
     private String Gender;
 
-    // Constructor 
+    // Constructor to initialize a Person object
     public Person(){}
 
 
-    // Getters and Setters
+    // Getters and Setters for each attribute
     // ID ---------------------------------------------------------------
     public Long getId() {
         return id;
@@ -67,7 +67,8 @@ public class Person implements Serializable {
         this.Gender = gender;
     } 
 
-    // Override methods for equality check and hash code generation
+    // Override methods for equality check and hash code generation 
+    // isso é importante para comparar objetos e usá-los em coleções baseadas em hash
     @Override
     public boolean equals(Object o) {
         if (!(o instanceof Person person)) return false;

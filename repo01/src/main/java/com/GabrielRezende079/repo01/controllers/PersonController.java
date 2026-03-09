@@ -28,7 +28,7 @@ public class PersonController {
     // API to get all persons GET
     @RequestMapping(  
     method = RequestMethod.GET, 
-    produces = MediaType.APPLICATION_JSON_VALUE) 
+    produces = MediaType.APPLICATION_JSON_VALUE)  // specify that the return type is JSON
     public List<Person> findAll(){
         return sevices.findAll(String.valueOf(Person.class)); //  casting to String to fix the error
         
@@ -66,11 +66,11 @@ public class PersonController {
      */
 
 
-    // API to update person PUT
+    // API to update person PUT/EDIT
     @RequestMapping(
     method = RequestMethod.PUT, 
     produces = MediaType.APPLICATION_JSON_VALUE) 
-    // Get person by id
+    // Its the same as using "Get person by id"
     public Person updatingPerson(@RequestBody Person person){
         return sevices.updatingPerson(person);
     }
@@ -78,7 +78,7 @@ public class PersonController {
     // API to delete person DELETE
     @RequestMapping( value = "/{id}", 
     method = RequestMethod.DELETE) 
-    // Get person by id
+    //Over again, same as "Get person by id"
     public void DeletingPerson(@PathVariable("id")String id){
         sevices.DeletingPerson(id);
     }
